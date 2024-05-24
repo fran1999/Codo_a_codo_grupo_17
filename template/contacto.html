@@ -1,8 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px; /* Aumenta el tamaño de fuente de los labels */
+            font-weight: bold; /* Hace que el texto de los labels sea en negrita */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px; /* Aumenta el padding para hacer los inputs más grandes */
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px; /* Aumenta el tamaño de fuente de los inputs */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
 <body>
-    <h1>Contacto</h1>
-    <p>Somos una organización dedicada a...</p>
-    <p>Para contactarnos, envíanos un correo electrónico a: <a href="mailto:contacto@evolucionjavascript.org">contacto@evolucionjavascript.org</a></p>
+    <div>
+        <p>Para contactarse con nosotros complete el siguiente formulario y seleccione el área a donde quiere dirigirse. Muchas gracias.</p>
+    </div>
+    <div>
+        <form id="contactForm" action="#" method="GET" onsubmit="return enviarFormulario()">
+            <label for="nombre_apellido">Nombre y Apellido:</label>
+            <input type="text" id="nombre_apellido" name="nombre_apellido" required><br>
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br>
+
+            <label for="area_contacto">Área de contacto:</label>
+            <select id="area_contacto" name="area_contacto" required>
+                <option value="adopcion">Adopción</option>
+                <option value="contacto">Contacto</option>
+                <option value="donaciones">Donaciones</option>
+                <option value="voluntarios">Voluntarios</option>
+            </select><br>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
+
+            <input type="submit" value="ENVIAR">
+        </form>
+    </div>
+    <script src="./js/route.js"></script>
 </body>
 </html>
+
+
+
+
+
+
